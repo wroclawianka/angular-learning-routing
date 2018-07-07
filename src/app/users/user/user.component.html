@@ -1,2 +1,12 @@
-<p>User with ID _ID_ loaded.</p>
-<p>User name is _NAME_</p>
+<p>User with ID {{user.id}} loaded.</p>
+<p>User name is {{user.name}}</p>
+<hr>
+<ul>
+    <li>
+        <a [routerLink]="['/users', 10, 'Anna']">Load Anna</a>
+    </li>
+    <li>
+        <a [routerLink]="['/users', 1, 'Max']">Load Max</a>
+    </li>
+</ul>
+<!-- user is created on initialization so values will be not updated without subscribe -->
