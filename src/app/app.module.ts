@@ -12,6 +12,7 @@ import { UserComponent } from './users/user/user.component';
 import { EditServerComponent } from './servers/edit-server/edit-server.component';
 import { ServerComponent } from './servers/server/server.component';
 import { ServersService } from './servers/servers.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,6 +24,9 @@ const appRoutes: Routes = [
     { path: ':id/edit', component: EditServerComponent },
     { path: ':id', component: ServerComponent },
   ] },
+  { path: 'not-found', component: PageNotFoundComponent},
+  // ** wildcard - catch all paths that you do not know
+  { path: '**', redirectTo: 'not-found'}
 ];
 
 @NgModule({
@@ -33,7 +37,8 @@ const appRoutes: Routes = [
     ServersComponent,
     UserComponent,
     EditServerComponent,
-    ServerComponent
+    ServerComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
