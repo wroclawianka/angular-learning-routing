@@ -1,14 +1,16 @@
-<div class="form-group">
-  <label for="name">Server Name</label>
-  <input
+<p *ngIf="!allowEdit">You are not allowed to edit. If you see thid message by misstake - please, contact your administrator</p>
+<div *ngIf="allowEdit">
+  <div class="form-group">
+    <label for="name">Server Name</label>
+    <input
     type="text"
     id="name"
     class="form-control"
     [(ngModel)]="serverName">
-</div>
-<div class="form-group">
-  <label for="status">Server Status</label>
-  <select
+  </div>
+  <div class="form-group">
+    <label for="status">Server Status</label>
+    <select
     id="status"
     class="form-control"
     [(ngModel)]="serverStatus">
@@ -17,5 +19,6 @@
   </select>
 </div>
 <button
-  class="btn btn-primary"
-  (click)="onUpdateServer()">Update Server</button>
+class="btn btn-primary"
+(click)="onUpdateServer()">Update Server</button>
+</div>

@@ -3,9 +3,10 @@
     <div class="list-group">
       <!-- queryParams - another bindable property of router link -->
        <!-- fragment="loading" or  [fragment]="'loading'" - Sets the hash fragment for the URL-->
+       <!-- dummy logic for editing (only for learning purposes) -->
       <a
         [routerLink]="['/servers', server.id]"
-        [queryParams]="{ allowEdit:1, id: server.id }"
+        [queryParams]="{ allowEdit: server.id === 3 ? '1' : '0', id: server.id }"
         fragment="loading"
         href="#"
         class="list-group-item"
