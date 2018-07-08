@@ -4,7 +4,7 @@
       <!-- queryParams - another bindable property of router link -->
        <!-- fragment="loading" or  [fragment]="'loading'" - Sets the hash fragment for the URL-->
       <a
-        [routerLink]="['/servers', 5, 'edit']"
+        [routerLink]="['/servers', server.id]"
         [queryParams]="{ allowEdit:1 }"
         fragment="loading"
         href="#"
