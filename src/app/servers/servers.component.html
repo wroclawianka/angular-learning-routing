@@ -5,7 +5,7 @@
        <!-- fragment="loading" or  [fragment]="'loading'" - Sets the hash fragment for the URL-->
       <a
         [routerLink]="['/servers', server.id]"
-        [queryParams]="{ allowEdit:1 }"
+        [queryParams]="{ allowEdit:1, id: server.id }"
         fragment="loading"
         href="#"
         class="list-group-item"
@@ -22,7 +22,7 @@
     <button class="btn btn-primary" (click)="onReload()">Reload Page</button>
     <app-edit-server></app-edit-server>
     <hr>
-    <app-server></app-server>
+    <!-- <app-server></app-server> -->
   </div>
 </div>
 
