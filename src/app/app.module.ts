@@ -15,6 +15,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AppRoutingModule } from './app-routing.module';
 import { AuthGuard } from './auth-guard.service';
 import { AuthService } from './auth.service';
+import { CanDeactivateGuard } from './servers/edit-server/can-activate-guard.service';
 
 
 @NgModule({
@@ -35,7 +36,7 @@ import { AuthService } from './auth.service';
     // RouterModule.forRoot(appRoutes) - needs to be removed, when app-routing.module is used
     AppRoutingModule // - the same result but with cleaner way!
   ],
-  providers: [ServersService, AuthGuard, AuthService],
+  providers: [ServersService, AuthGuard, AuthService, CanDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
