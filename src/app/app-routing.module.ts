@@ -9,6 +9,7 @@ import { UserComponent } from './users/user/user.component';
 import { EditServerComponent } from './servers/edit-server/edit-server.component';
 import { ServerComponent } from './servers/server/server.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthGuard } from './auth-guard.service';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -16,7 +17,10 @@ const appRoutes: Routes = [
       // colon is saying Angular that is dynamic part of the path
       { path: ':id/:name', component: UserComponent },
     ] },
-    { path: 'servers', component: ServersComponent, children: [
+    { path: 'servers', 
+    // canActivate: [AuthGuard], 
+    canActivateChild: [AuthGuard], // AuthGuard is able to protect both single route and child routes
+    component: ServersComponent, children: [
       { path: ':id/edit', component: EditServerComponent },
       { path: ':id', component: ServerComponent },
     ] },
