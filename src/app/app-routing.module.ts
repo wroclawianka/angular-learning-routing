@@ -37,6 +37,8 @@ const appRoutes: Routes = [
     
     imports: [
         RouterModule.forRoot(appRoutes)
+        // RouterModule.forRoot(appRoutes, { useHash: true})
+        // useHash roputing; by default is false. trick for web server (see lecture 142 - Understanding Location Stategies)
     ],
     // to outsource routes use export, we have to add our RouterModule back 
     exports: [RouterModule]
