@@ -1,5 +1,3 @@
-import { Observable } from "rxjs";
-
 export class AuthService {
     // fake service
     loggedIn = false;
