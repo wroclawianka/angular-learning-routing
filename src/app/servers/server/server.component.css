@@ -1,0 +1,12 @@
+.name {
+    font-size: 135%;
+    padding: 5px 0;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
