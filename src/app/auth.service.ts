@@ -1,3 +1,5 @@
+import { Observable, of } from "rxjs";
+
 export class AuthService {
     // fake service
     loggedIn = false;
@@ -20,5 +22,9 @@ export class AuthService {
 
     logout() {
         this.loggedIn = false;
+    }
+
+    getLoggedIn() : Observable<boolean> {
+        return of(this.loggedIn);
     }
 }

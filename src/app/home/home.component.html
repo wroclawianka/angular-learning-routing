@@ -1,10 +1,17 @@
 <h1 class="title">Server Manager 4.0</h1>
 <div class="intro">
-    <p>Welcome to your Server Manager!</p>
     <p>Manage your Servers and Users.</p>
 </div>
 <div class="logging">
-<h2>Log in</h2>
-    <button class="btn btn-primary" (click)="onLogin()">Login</button>
-    <button class="btn btn-primary"(click)="onLogout()">Logout</button> 
+    <div *ngIf="loggedIn;then logout else login"></div>
+        <ng-template #login>
+            <h2>Log in</h2>
+            <button class="btn btn-primary" (click)="onLogin()">Login</button>
+            <p>Login to enable additional functions</p>
+        </ng-template>
+        <ng-template #logout>
+            <h2>Log out</h2>
+            <button class="btn btn-primary"(click)="onLogout()">Logout</button>
+            <p>Log out from the application</p>
+        </ng-template>
 </div>
